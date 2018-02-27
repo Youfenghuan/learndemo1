@@ -1,0 +1,209 @@
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="YES">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <title>开店管家手机推广</title>
+    <link type="text/css" rel="stylesheet" href="css/index.css?20166008"/>
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/md5.js"></script>
+</head>
+<body>
+  <div class="outer-container">
+      <div class="header">
+        <div class="header_1">
+          <div class="header_1_logo">
+            <img src="./img/logo1.png" width="100%" height="100%" />
+          </div>
+          <div class="header_1_title" >
+            <img src="./img/36236.png" width="100%" height="100%" />
+            <span class="span1">11.43M &nbsp;12万次下载</span>
+            <span>客户达开店</span>
+          </div>
+        </div>
+        <div id="video" style="width:100%;"> <!-- height:400px;autoplay="autoplay" autoplay="autoplay" playsinline="true" -webkit-playsinline="true"-->
+    			<video id= "myVideo" width="100%" poster="./img/video4.png" controls="controls" onclick="playPause()" playsinline="true" webkit-playsinline="true">
+    				<source src="http://up.sdd.hk/kehuda/02kehuda10s.mp4" type="video/mp4"/>
+    				02：开网店没货源
+    			</video>
+		    </div>
+        <!-- <div class="videoLayer">
+            <div class="yuan"><div class="triangle_right"></div></div>
+        </div> -->
+        <div class="poster2_pic">
+          <img src="./img/poster3.png" width="100%" height="100%" />
+        </div>
+        <div class="poster1_pic">
+          <img id="poster1" class='' src="./img/poster1.png" width="100%"/>
+          <img id="poster2" class='addSwipe' src="./img/poster2.png" width="100%"/>
+        </div>
+        <div class='loop_swipe'>
+            <div class="loop_swipe-title">“开店创业，就要客户达！”</div>
+            <div class='loop_swipe-pic'>
+              <div class="logo-pic">
+                <img id="img1" src="./img/yindao1@2x.png"/>
+              </div>
+              <div class="logo-pic">
+                <img id="img2" src="./img/yindao4@2x.png" />
+              </div>
+              <div class="logo-pic">
+                <img id="img3" src="./img/yindao2@2x.png" />
+              </div>
+              <div class="logo-pic">
+                <img id="img4" src="./img/yindao3@2x.png" />
+              </div>
+            </div>
+        </div>
+        <div style="width:100%;height:8px;background:#ddd;"></div>
+      </div>
+
+      <div class="content-container">
+        <div class="intro">
+          <h3>应用描述</h3>
+          <div>
+            免费注册并登录客户达开店管家，分销商可"秒速"上架商品到淘宝，随时切换多店铺。上架商品的即时供货状况是否合规等，一目了然。海量实物商品，全场包邮。微商货源，一键转发朋友圈。<div>
+          </div>
+          <hr class="hrClass" />
+          <h3>其他信息</h3>
+          <div>开发者：深圳市客户达科技有限公司</div>
+          <div>更新时间：2017年06月05日</div>
+          <div>版本：V3.24</div>
+          <hr class="hrClass" />
+        </div>
+        <div class="comment">
+          <div class="comment-title">
+            <span>用户评论</span>
+            <span class="span-img"><img src="./img/comment.png" width="60%" height="15px" /></span>
+            <span>我要评论</span>
+          </div>
+          <ul id="comment-content">
+          </ul>
+          <div class='mostComment'>查看更多评论</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <a id="footer-downid" href="" class="footer-down">
+        <img src="./img/install1.png" width="100%" height="100%">
+      </a>
+    </div>
+  </div>
+  <!-- 遮罩层 -->
+  <div class="layer">
+    <div class="view-container" id="view-containerid">
+      <div id="logoleft1" class="logo-pic_layer logoleft1">
+        <img src="./img/yindao1@2x.png"/>
+      </div>
+      <div id="logoleft2" class="logo-pic_layer logoleft2">
+        <img src="./img/yindao4@2x.png"/>
+      </div>
+      <div id="logoleft3" class="logo-pic_layer logoleft3">
+        <img src="./img/yindao2@2x.png"/>
+      </div>
+      <div id="logoleft4" class="logo-pic_layer logoleft4">
+        <img src="./img/yindao3@2x.png"/>
+      </div>
+    </div>
+  </div>
+  <script src="./js/util.js"></script>
+  <script src="./js/common.js"></script>
+  <script>
+
+    // 页面加载完成执行函数 start
+    $(function(){
+      setInterval(loopSwipePic,3000); // 间隔的滑动图片
+      commentFactory(); // 动态生成评论的方法
+      eventListenerFun("view-containerid"); // 监听图片放大滑动的效果。
+
+      $(".poster1_pic img").on("touchend",loopSwipePic);
+
+      $(".logo-pic").on("click",function(e){
+        $(".layer").fadeIn('slow');
+        var id = e.target.id;
+        if(id === "img1"){
+          $("#logoleft1").css({"transform":"translate3d(0px, 0px, 0px)", "-webkit-transform":"translate3d(0px, 0px, 0px)"});
+          $("#logoleft2").css({"transform":"translate3d(100%, 0px, 0px)","-webkit-transform":"translate3d(100%, 0px, 0px)"});
+          $("#logoleft3").css({"transform":"translate3d(200%, 0px, 0px)","-webkit-transform":"translate3d(200%, 0px, 0px)"});
+          $("#logoleft4").css({"transform":"translate3d(300%, 0px, 0px)","-webkit-transform":"translate3d(300%, 0px, 0px)"});
+        }else if(id === "img2"){
+          $("#logoleft1").css({"transform":"translate3d(-100%, 0px, 0px)", "-webkit-transform":"translate3d(-100%, 0px, 0px)"});
+          $("#logoleft2").css({"transform":"translate3d(0px, 0px, 0px)","-webkit-transform":"translate3d(0px, 0px, 0px)"});
+          $("#logoleft3").css({"transform":"translate3d(100%, 0px, 0px)","-webkit-transform":"translate3d(100%, 0px, 0px)"});
+          $("#logoleft4").css({"transform":"translate3d(200%, 0px, 0px)","-webkit-transform":"translate3d(200%, 0px, 0px)"});
+        }else if(id === "img3"){
+          $("#logoleft1").css({"transform":"translate3d(-200%, 0px, 0px)", "-webkit-transform":"translate3d(-200%, 0px, 0px)"});
+          $("#logoleft2").css({"transform":"translate3d(-100%, 0px, 0px)", "-webkit-transform":"translate3d(-100%, 0px, 0px)"});
+          $("#logoleft3").css({"transform":"translate3d(0px, 0px, 0px)", "-webkit-transform":"translate3d(0px, 0px, 0px)"});
+          $("#logoleft4").css({"transform":"translate3d(100%, 0px, 0px)", "-webkit-transform":"translate3d(100%, 0px, 0px)"});
+        }else{
+          $("#logoleft1").css({"transform":"translate3d(-300%, 0px, 0px)", "-webkit-transform":"translate3d(-300%, 0px, 0px)"});
+          $("#logoleft2").css({"transform":"translate3d(-200%, 0px, 0px)", "-webkit-transform":"translate3d(-200%, 0px, 0px)"});
+          $("#logoleft3").css({"transform":"translate3d(-100%, 0px, 0px)", "-webkit-transform":"translate3d(-100%, 0px, 0px)"});
+          $("#logoleft4").css({"transform":"translate3d(0px, 0px, 0px)", "-webkit-transform":"translate3d(0px, 0px, 0px)"});
+        }
+      });
+
+      $(".layer").on("click",function(e){
+        if(e.target.classList.length === 1){
+          $(".layer").fadeOut('slow');
+        }
+      });
+      $(".mostComment").on("click",function(e){
+        console.log('pageNum', pageNum);
+        commentFactory(pageNum); // 动态生成评论的方法
+      });
+      //点击安装处理函数
+      $(".footer-down").on("click",execuDownLoad);
+
+      // var us = navigator.userAgent;
+      // var isiOS = !!us.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+      // if(isiOS){// 判断是否是ios系统,实现自动播放功能
+      //   var md = document.getElementsByTagName("video")[0];
+      //   md.pause();
+      //   md.play();
+      // }
+
+      // var md = document.getElementsByTagName("video")[0].play();
+      // md.addEventListener("ended",function(){
+      //     $(".videoLayer").show();
+      // });
+      // $(".videoLayer").on("click",function(){
+      //     $(".videoLayer").hide();
+      //     md.play();
+      // });
+      document.getElementsByTagName("video")[0].click();
+    });
+    // 页面加载完成执行函数 end
+    function playPause(){
+      var md = document.getElementsByTagName("video")[0];
+      if(md.paused){
+        md.play();
+      }else{
+        md.pause();
+      }
+
+    }
+  </script>
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
